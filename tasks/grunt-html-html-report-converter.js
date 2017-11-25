@@ -10,7 +10,7 @@ module.exports = function (grunt) {
       'Converts the JSON report of the grunt-html task to HTML.',
       function () {
         const data = this.data
-        const input = data.input
+        var input = data.input
         const output = data.output
         const options = this.options({
           targetExtension: '.html',
@@ -20,6 +20,7 @@ module.exports = function (grunt) {
         const targetExtension = options.targetExtension
         const ignoreMissing = options.ignoreMissing
         const force = options.force
+        const warn = force ? grunt.log.warn : grunt.fail.warn
         var files = this.files
         var converted = 0
         var failed = 0
@@ -27,13 +28,16 @@ module.exports = function (grunt) {
         if (input && output) {
           grunt.log.warn('Properties "input" and "output" are deprecated. ' +
               'Use "src" and "dest" with the same content.')
+          if (!fs.existsSync(input)) {
+            input = null
+          }
           files = [
             {
               orig: {
                 src: input,
                 dest: output
               },
-              src: [input],
+              src: input ? [input] : [],
               dest: output
             }
           ]
@@ -49,12 +53,11 @@ module.exports = function (grunt) {
           } catch (error) {
             grunt.verbose.error(error.stack)
             grunt.log.error(error)
-            const warn = force ? grunt.log.warn : grunt.fail.warn
             warn('Converting validation reports failed.')
           }
         } else {
           if (!ignoreMissing) {
-            grunt.fail.warn('No files specified.')
+            warn('No files specified.')
           }
         }
 
@@ -64,8 +67,7 @@ module.exports = function (grunt) {
             src.forEach(convertFile.bind(null, file))
           } else {
             if (!ignoreMissing) {
-              grunt.fail.warn('No files found at ' +
-                  chalk.cyan(file.orig.src) + '.')
+              warn('No files found at ' + chalk.cyan(file.orig.src) + '.')
             }
           }
         }
@@ -77,8 +79,8 @@ module.exports = function (grunt) {
           if ((trailingChar === '/' || trailingChar === path.sep) &&
               !file.orig.expand) {
             dir = dest.substring(0, dest.length - 1)
-            const parsed = path.basename(src)
-            dest = path.join(dest, parsed + targetExtension)
+            const parsed = path.parse(src)
+            dest = path.join(dest, parsed.name + targetExtension)
           } else {
             dir = path.dirname(dest)
           }
