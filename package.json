@@ -1,7 +1,7 @@
 {
   "name": "grunt-html-html-report-converter",
   "description": "Converts the JSON report of the grunt-html task to HTML.",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "homepage": "https://github.com/prantlf/grunt-html-html-report-converter",
   "author": {
     "name": "Ferdinand Prantl",
@@ -26,7 +26,8 @@
     "node": ">= 4"
   },
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "dependencies": {
     "chalk": "^2.3.0",
@@ -34,7 +35,8 @@
   },
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-standard": "^3.1.0"
+    "grunt-standard": "^3.1.0",
+    "semantic-release": "^8.2.0"
   },
   "peerDependencies": {
     "grunt": ">=0.4.5"
