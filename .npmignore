@@ -7,3 +7,4 @@
 Gruntfile.js
 node_modules
 npm-debug.log
+tests/actual

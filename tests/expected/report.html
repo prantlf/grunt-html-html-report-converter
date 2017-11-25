@@ -1,0 +1,365 @@
+<html>
+  <head>
+    <title>HTML Validation Report</title>
+    <style>
+      body {font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”, "Helvetica Neue", Arial, sans-serif;}
+      pre {font-family: Monaco, Consolas, "Andale Mono", "Ubuntu Mono", monospace;}
+      #summary {font-size: 38px; color:#555}
+      .error-count {color:red;}
+      .warning-count {color:orange}
+      .notice-count {color:blue}
+      .file-count {color:black;}
+
+      #files {}
+      .file {padding:20px 5px; border-bottom:2px solid #ccc; font-size:22px;}
+      .file .file-info {display:none;}
+      .file a:link {border-bottom:1px dotted #888; text-decoration:none; color:black;}
+      .file a:link:hover {border-bottom:none;}
+
+      .errors {padding:5px 15px; margin:5px 0; border-left:3px solid red; font-size:16px;}
+      .warnings {padding:0 15px; border-left:3px solid orange; font-size:18px; color:#666;}
+      .notices {padding:0 15px; border-left:3px solid blue; font-size:18px; color:#999;}
+
+      .error, .warning, .notice {padding:5px 0; border-bottom:1px solid #DDD;}
+      .error .info, .warning .info, .notice .info {color:#666; font-size:15px;}
+      .error .extract, .warning .extract, .notice .extract {color:#333; font-size:12px;}
+
+      .file:last-child, .error:last-child, .warning:last-child, .notice:last-child {border-bottom:none;}
+    </style>
+    <script type="text/javascript">
+      document.addEventListener('click', function (event) {
+        var target = event.target
+        if (target.tagName === 'A') {
+          var fileInfo = event.target.parentNode.querySelector('.file-info')
+          if (fileInfo.offsetParent === null) {
+            fileInfo.style.display = 'block'
+          } else {
+            fileInfo.style.display = 'none'
+          }
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <div id="summary">
+      Summary: <span class="error-count">31</span> errors,
+               <span class="warning-count">3</span> warnings
+               and <span class="notice-count">0</span> notices
+               in <span class="file-count">3</span> files
+    </div>
+    <div id="files">
+        <div class="file">
+          <a href="javascript:void(null)">snapshots/hmpg.net.html</a>
+          <b>
+            (<span class="error-count">21</span> /
+            <span class="warning-count">0</span> /
+            <span class="notice-count">0</span>)
+          </b>
+          <div class="file-info">
+            <div class="errors">
+                <div class="error">
+                  Start tag seen without seeing a doctype first. Expected “&lt;!DOCTYPE html&gt;”.
+                  <div class="info">
+                    <u>at line 1, column 6</u>
+                    <pre class="extract">&lt;html&gt;&lt;head&gt;</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Attribute “gapi_processed” not allowed on element “script” at this point.
+                  <div class="info">
+                    <u>at line 3, column 513</u>
+                    <pre class="extract">&gt;&lt;/script&gt;&lt;script type&#x3D;&quot;text/javascript&quot; async&#x3D;&quot;&quot; src&#x3D;&quot;https://apis.google.com/js/plusone.js&quot; gapi_processed&#x3D;&quot;true&quot;&gt;&lt;/scri</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  The “align” attribute on the “p” element is obsolete. Use CSS instead.
+                  <div class="info">
+                    <u>at line 11, column 18</u>
+                    <pre class="extract">d&gt;
+&lt;body&gt;
+&lt;p align&#x3D;&quot;center&quot;&gt;&lt;font </pre>
+                  </div>
+                </div>
+                <div class="error">
+                  The “font” element is obsolete. Use CSS instead.
+                  <div class="info">
+                    <u>at line 11, column 34</u>
+                    <pre class="extract">&#x3D;&quot;center&quot;&gt;&lt;font size&#x3D;&quot;+4&quot;&gt;Congra</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  The “align” attribute on the “p” element is obsolete. Use CSS instead.
+                  <div class="info">
+                    <u>at line 12, column 22</u>
+                    <pre class="extract">font&gt;
+&lt;/p&gt;&lt;p align&#x3D;&quot;center&quot;&gt;&lt;b&gt;You</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  The “align” attribute on the “p” element is obsolete. Use CSS instead.
+                  <div class="info">
+                    <u>at line 16, column 22</u>
+                    <pre class="extract">rnet.
+&lt;/p&gt;&lt;p align&#x3D;&quot;center&quot;&gt;You sh</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  The “align” attribute on the “p” element is obsolete. Use CSS instead.
+                  <div class="info">
+                    <u>at line 25, column 18</u>
+                    <pre class="extract">/li&gt;&lt;/ul&gt;
+&lt;p align&#x3D;&quot;center&quot;&gt;&lt;font </pre>
+                  </div>
+                </div>
+                <div class="error">
+                  The “font” element is obsolete. Use CSS instead.
+                  <div class="info">
+                    <u>at line 25, column 34</u>
+                    <pre class="extract">&#x3D;&quot;center&quot;&gt;&lt;font size&#x3D;&quot;-1&quot;&gt;&lt;i&gt;* P</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Attribute “ng-non-bindable” not allowed on element “iframe” at this point.
+                  <div class="info">
+                    <u>at line 28, column 1153</u>
+                    <pre class="extract">t: 24px;&quot;&gt;&lt;iframe ng-non-bindable&#x3D;&quot;&quot; frameborder&#x3D;&quot;0&quot; hspace&#x3D;&quot;0&quot; marginheight&#x3D;&quot;0&quot; marginwidth&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot; style&#x3D;&quot;position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;&quot; tabindex&#x3D;&quot;0&quot; vspace&#x3D;&quot;0&quot; width&#x3D;&quot;100%&quot; id&#x3D;&quot;I0_1511618104254&quot; name&#x3D;&quot;I0_1511618104254&quot; src&#x3D;&quot;https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi&#x3D;1&amp;amp;origin&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;url&#x3D;http%3A%2F%2Fhmpg.net%2F&amp;amp;gsrc&#x3D;3p&amp;amp;ic&#x3D;1&amp;amp;jsh&#x3D;m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_GB.R4vvmD-bxFg.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCNqw3woMCdGPJ1k0Sr5vKTnVpzXbw#_methods&#x3D;onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;amp;id&#x3D;I0_1511618104254&amp;amp;_gfid&#x3D;I0_1511618104254&amp;amp;parent&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;pfname&#x3D;&amp;amp;rpctoken&#x3D;18444644&quot; data-gapiattached&#x3D;&quot;true&quot; title&#x3D;&quot;G+&quot;&gt;&lt;/ifra</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Attribute “hspace” not allowed on element “iframe” at this point.
+                  <div class="info">
+                    <u>at line 28, column 1153</u>
+                    <pre class="extract">t: 24px;&quot;&gt;&lt;iframe ng-non-bindable&#x3D;&quot;&quot; frameborder&#x3D;&quot;0&quot; hspace&#x3D;&quot;0&quot; marginheight&#x3D;&quot;0&quot; marginwidth&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot; style&#x3D;&quot;position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;&quot; tabindex&#x3D;&quot;0&quot; vspace&#x3D;&quot;0&quot; width&#x3D;&quot;100%&quot; id&#x3D;&quot;I0_1511618104254&quot; name&#x3D;&quot;I0_1511618104254&quot; src&#x3D;&quot;https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi&#x3D;1&amp;amp;origin&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;url&#x3D;http%3A%2F%2Fhmpg.net%2F&amp;amp;gsrc&#x3D;3p&amp;amp;ic&#x3D;1&amp;amp;jsh&#x3D;m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_GB.R4vvmD-bxFg.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCNqw3woMCdGPJ1k0Sr5vKTnVpzXbw#_methods&#x3D;onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;amp;id&#x3D;I0_1511618104254&amp;amp;_gfid&#x3D;I0_1511618104254&amp;amp;parent&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;pfname&#x3D;&amp;amp;rpctoken&#x3D;18444644&quot; data-gapiattached&#x3D;&quot;true&quot; title&#x3D;&quot;G+&quot;&gt;&lt;/ifra</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Attribute “vspace” not allowed on element “iframe” at this point.
+                  <div class="info">
+                    <u>at line 28, column 1153</u>
+                    <pre class="extract">t: 24px;&quot;&gt;&lt;iframe ng-non-bindable&#x3D;&quot;&quot; frameborder&#x3D;&quot;0&quot; hspace&#x3D;&quot;0&quot; marginheight&#x3D;&quot;0&quot; marginwidth&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot; style&#x3D;&quot;position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;&quot; tabindex&#x3D;&quot;0&quot; vspace&#x3D;&quot;0&quot; width&#x3D;&quot;100%&quot; id&#x3D;&quot;I0_1511618104254&quot; name&#x3D;&quot;I0_1511618104254&quot; src&#x3D;&quot;https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi&#x3D;1&amp;amp;origin&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;url&#x3D;http%3A%2F%2Fhmpg.net%2F&amp;amp;gsrc&#x3D;3p&amp;amp;ic&#x3D;1&amp;amp;jsh&#x3D;m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_GB.R4vvmD-bxFg.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCNqw3woMCdGPJ1k0Sr5vKTnVpzXbw#_methods&#x3D;onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;amp;id&#x3D;I0_1511618104254&amp;amp;_gfid&#x3D;I0_1511618104254&amp;amp;parent&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;pfname&#x3D;&amp;amp;rpctoken&#x3D;18444644&quot; data-gapiattached&#x3D;&quot;true&quot; title&#x3D;&quot;G+&quot;&gt;&lt;/ifra</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Bad value “100%” for attribute “width” on element “iframe”: Expected a digit but saw “%” instead.
+                  <div class="info">
+                    <u>at line 28, column 1153</u>
+                    <pre class="extract">t: 24px;&quot;&gt;&lt;iframe ng-non-bindable&#x3D;&quot;&quot; frameborder&#x3D;&quot;0&quot; hspace&#x3D;&quot;0&quot; marginheight&#x3D;&quot;0&quot; marginwidth&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot; style&#x3D;&quot;position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;&quot; tabindex&#x3D;&quot;0&quot; vspace&#x3D;&quot;0&quot; width&#x3D;&quot;100%&quot; id&#x3D;&quot;I0_1511618104254&quot; name&#x3D;&quot;I0_1511618104254&quot; src&#x3D;&quot;https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi&#x3D;1&amp;amp;origin&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;url&#x3D;http%3A%2F%2Fhmpg.net%2F&amp;amp;gsrc&#x3D;3p&amp;amp;ic&#x3D;1&amp;amp;jsh&#x3D;m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_GB.R4vvmD-bxFg.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCNqw3woMCdGPJ1k0Sr5vKTnVpzXbw#_methods&#x3D;onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;amp;id&#x3D;I0_1511618104254&amp;amp;_gfid&#x3D;I0_1511618104254&amp;amp;parent&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;pfname&#x3D;&amp;amp;rpctoken&#x3D;18444644&quot; data-gapiattached&#x3D;&quot;true&quot; title&#x3D;&quot;G+&quot;&gt;&lt;/ifra</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  The “frameborder” attribute on the “iframe” element is obsolete. Use CSS instead.
+                  <div class="info">
+                    <u>at line 28, column 1153</u>
+                    <pre class="extract">t: 24px;&quot;&gt;&lt;iframe ng-non-bindable&#x3D;&quot;&quot; frameborder&#x3D;&quot;0&quot; hspace&#x3D;&quot;0&quot; marginheight&#x3D;&quot;0&quot; marginwidth&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot; style&#x3D;&quot;position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;&quot; tabindex&#x3D;&quot;0&quot; vspace&#x3D;&quot;0&quot; width&#x3D;&quot;100%&quot; id&#x3D;&quot;I0_1511618104254&quot; name&#x3D;&quot;I0_1511618104254&quot; src&#x3D;&quot;https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi&#x3D;1&amp;amp;origin&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;url&#x3D;http%3A%2F%2Fhmpg.net%2F&amp;amp;gsrc&#x3D;3p&amp;amp;ic&#x3D;1&amp;amp;jsh&#x3D;m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_GB.R4vvmD-bxFg.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCNqw3woMCdGPJ1k0Sr5vKTnVpzXbw#_methods&#x3D;onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;amp;id&#x3D;I0_1511618104254&amp;amp;_gfid&#x3D;I0_1511618104254&amp;amp;parent&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;pfname&#x3D;&amp;amp;rpctoken&#x3D;18444644&quot; data-gapiattached&#x3D;&quot;true&quot; title&#x3D;&quot;G+&quot;&gt;&lt;/ifra</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  The “marginheight” attribute on the “iframe” element is obsolete. Use CSS instead.
+                  <div class="info">
+                    <u>at line 28, column 1153</u>
+                    <pre class="extract">t: 24px;&quot;&gt;&lt;iframe ng-non-bindable&#x3D;&quot;&quot; frameborder&#x3D;&quot;0&quot; hspace&#x3D;&quot;0&quot; marginheight&#x3D;&quot;0&quot; marginwidth&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot; style&#x3D;&quot;position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;&quot; tabindex&#x3D;&quot;0&quot; vspace&#x3D;&quot;0&quot; width&#x3D;&quot;100%&quot; id&#x3D;&quot;I0_1511618104254&quot; name&#x3D;&quot;I0_1511618104254&quot; src&#x3D;&quot;https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi&#x3D;1&amp;amp;origin&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;url&#x3D;http%3A%2F%2Fhmpg.net%2F&amp;amp;gsrc&#x3D;3p&amp;amp;ic&#x3D;1&amp;amp;jsh&#x3D;m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_GB.R4vvmD-bxFg.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCNqw3woMCdGPJ1k0Sr5vKTnVpzXbw#_methods&#x3D;onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;amp;id&#x3D;I0_1511618104254&amp;amp;_gfid&#x3D;I0_1511618104254&amp;amp;parent&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;pfname&#x3D;&amp;amp;rpctoken&#x3D;18444644&quot; data-gapiattached&#x3D;&quot;true&quot; title&#x3D;&quot;G+&quot;&gt;&lt;/ifra</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  The “marginwidth” attribute on the “iframe” element is obsolete. Use CSS instead.
+                  <div class="info">
+                    <u>at line 28, column 1153</u>
+                    <pre class="extract">t: 24px;&quot;&gt;&lt;iframe ng-non-bindable&#x3D;&quot;&quot; frameborder&#x3D;&quot;0&quot; hspace&#x3D;&quot;0&quot; marginheight&#x3D;&quot;0&quot; marginwidth&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot; style&#x3D;&quot;position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;&quot; tabindex&#x3D;&quot;0&quot; vspace&#x3D;&quot;0&quot; width&#x3D;&quot;100%&quot; id&#x3D;&quot;I0_1511618104254&quot; name&#x3D;&quot;I0_1511618104254&quot; src&#x3D;&quot;https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi&#x3D;1&amp;amp;origin&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;url&#x3D;http%3A%2F%2Fhmpg.net%2F&amp;amp;gsrc&#x3D;3p&amp;amp;ic&#x3D;1&amp;amp;jsh&#x3D;m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_GB.R4vvmD-bxFg.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCNqw3woMCdGPJ1k0Sr5vKTnVpzXbw#_methods&#x3D;onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;amp;id&#x3D;I0_1511618104254&amp;amp;_gfid&#x3D;I0_1511618104254&amp;amp;parent&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;pfname&#x3D;&amp;amp;rpctoken&#x3D;18444644&quot; data-gapiattached&#x3D;&quot;true&quot; title&#x3D;&quot;G+&quot;&gt;&lt;/ifra</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  The “scrolling” attribute on the “iframe” element is obsolete. Use CSS instead.
+                  <div class="info">
+                    <u>at line 28, column 1153</u>
+                    <pre class="extract">t: 24px;&quot;&gt;&lt;iframe ng-non-bindable&#x3D;&quot;&quot; frameborder&#x3D;&quot;0&quot; hspace&#x3D;&quot;0&quot; marginheight&#x3D;&quot;0&quot; marginwidth&#x3D;&quot;0&quot; scrolling&#x3D;&quot;no&quot; style&#x3D;&quot;position: static; top: 0px; width: 38px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 24px;&quot; tabindex&#x3D;&quot;0&quot; vspace&#x3D;&quot;0&quot; width&#x3D;&quot;100%&quot; id&#x3D;&quot;I0_1511618104254&quot; name&#x3D;&quot;I0_1511618104254&quot; src&#x3D;&quot;https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi&#x3D;1&amp;amp;origin&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;url&#x3D;http%3A%2F%2Fhmpg.net%2F&amp;amp;gsrc&#x3D;3p&amp;amp;ic&#x3D;1&amp;amp;jsh&#x3D;m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_GB.R4vvmD-bxFg.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCNqw3woMCdGPJ1k0Sr5vKTnVpzXbw#_methods&#x3D;onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;amp;id&#x3D;I0_1511618104254&amp;amp;_gfid&#x3D;I0_1511618104254&amp;amp;parent&#x3D;http%3A%2F%2Fhmpg.net&amp;amp;pfname&#x3D;&amp;amp;rpctoken&#x3D;18444644&quot; data-gapiattached&#x3D;&quot;true&quot; title&#x3D;&quot;G+&quot;&gt;&lt;/ifra</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  The “align” attribute on the “p” element is obsolete. Use CSS instead.
+                  <div class="info">
+                    <u>at line 31, column 18</u>
+                    <pre class="extract">
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p align&#x3D;&quot;center&quot;&gt;&lt;img s</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  An “img” element must have an “alt” attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+                  <div class="info">
+                    <u>at line 31, column 45</u>
+                    <pre class="extract">&#x3D;&quot;center&quot;&gt;&lt;img src&#x3D;&quot;downloadwww.gif&quot;&gt;
+
+&lt;!--</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Element “contentxferbho” not allowed as child of element “body” in this context. (Suppressing further errors from this subtree.)
+                  <div class="info">
+                    <u>at line 42, column 526</u>
+                    <pre class="extract">&gt;&lt;/iframe&gt;&lt;contentxferbho id&#x3D;&quot;87FD7BE7-AD58-4878-9AF6-8540EC34D21C&quot;&gt;&lt;/cont</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Stray start tag “addoninited”.
+                  <div class="info">
+                    <u>at line 42, column 612</u>
+                    <pre class="extract">ntxferbho&gt;&lt;/body&gt;&lt;addoninited id&#x3D;&quot;addonInited&quot; targetelementname&#x3D;&quot;addonInited&quot;&gt;&lt;/addo</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Element “addoninited” not allowed as child of element “body” in this context. (Suppressing further errors from this subtree.)
+                  <div class="info">
+                    <u>at line 42, column 612</u>
+                    <pre class="extract">ntxferbho&gt;&lt;/body&gt;&lt;addoninited id&#x3D;&quot;addonInited&quot; targetelementname&#x3D;&quot;addonInited&quot;&gt;&lt;/addo</pre>
+                  </div>
+                </div>
+            </div>
+            <div class="warnings">
+            </div>
+            <div class="notices">
+            </div>
+          </div>
+        </div>
+        <div class="file">
+          <a href="javascript:void(null)">snapshots/wikimedia.org.html</a>
+          <b>
+            (<span class="error-count">4</span> /
+            <span class="warning-count">1</span> /
+            <span class="notice-count">0</span>)
+          </b>
+          <div class="file-info">
+            <div class="errors">
+                <div class="error">
+                  Start tag seen without seeing a doctype first. Expected “&lt;!DOCTYPE html&gt;”.
+                  <div class="info">
+                    <u>at line 1, column 27</u>
+                    <pre class="extract">&lt;html lang&#x3D;&quot;mul&quot; dir&#x3D;&quot;ltr&quot;&gt;&lt;head&gt;</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Element “contentxferbho” not allowed as child of element “body” in this context. (Suppressing further errors from this subtree.)
+                  <div class="info">
+                    <u>at line 83, column 58</u>
+                    <pre class="extract">  &lt;/div&gt;
+
+&lt;contentxferbho id&#x3D;&quot;87FD7BE7-AD58-4878-9AF6-8540EC34D21C&quot;&gt;&lt;/cont</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Stray start tag “addoninited”.
+                  <div class="info">
+                    <u>at line 83, column 144</u>
+                    <pre class="extract">ntxferbho&gt;&lt;/body&gt;&lt;addoninited id&#x3D;&quot;addonInited&quot; targetelementname&#x3D;&quot;addonInited&quot;&gt;&lt;/addo</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Element “addoninited” not allowed as child of element “body” in this context. (Suppressing further errors from this subtree.)
+                  <div class="info">
+                    <u>at line 83, column 144</u>
+                    <pre class="extract">ntxferbho&gt;&lt;/body&gt;&lt;addoninited id&#x3D;&quot;addonInited&quot; targetelementname&#x3D;&quot;addonInited&quot;&gt;&lt;/addo</pre>
+                  </div>
+                </div>
+            </div>
+            <div class="warnings">
+                <div class="warning">
+                  Potentially bad value “copyright” for attribute “rel” on element “link”: The keyword “copyright” for the “rel” attribute should not be used. Consider using “license” instead.
+                  <div class="info">
+                    <u>at line 9, column 71</u>
+                    <pre class="extract">con.ico&quot;&gt;
+&lt;link rel&#x3D;&quot;copyright&quot; href&#x3D;&quot;//creativecommons.org/licenses/by-sa/3.0/&quot;&gt;
+&lt;link</pre>
+                  </div>
+                </div>
+            </div>
+            <div class="notices">
+            </div>
+          </div>
+        </div>
+        <div class="file">
+          <a href="javascript:void(null)">snapshots/xkcd.com.html</a>
+          <b>
+            (<span class="error-count">6</span> /
+            <span class="warning-count">2</span> /
+            <span class="notice-count">0</span>)
+          </b>
+          <div class="file-info">
+            <div class="errors">
+                <div class="error">
+                  Start tag seen without seeing a doctype first. Expected “&lt;!DOCTYPE html&gt;”.
+                  <div class="info">
+                    <u>at line 1, column 6</u>
+                    <pre class="extract">&lt;html&gt;&lt;head&gt;</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Duplicate ID “comicLinks”.
+                  <div class="info">
+                    <u>at line 114, column 21</u>
+                    <pre class="extract">div&gt;
+&lt;br&gt;
+&lt;div id&#x3D;&quot;comicLinks&quot;&gt;
+Other</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  The “center” element is obsolete. Use CSS instead.
+                  <div class="info">
+                    <u>at line 121, column 8</u>
+                    <pre class="extract">div&gt;
+&lt;br&gt;
+&lt;center&gt;
+&lt;div </pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Element “contentxferbho” not allowed as child of element “body” in this context. (Suppressing further errors from this subtree.)
+                  <div class="info">
+                    <u>at line 136, column 58</u>
+                    <pre class="extract">ode --&gt;
+
+
+&lt;contentxferbho id&#x3D;&quot;87FD7BE7-AD58-4878-9AF6-8540EC34D21C&quot;&gt;&lt;/cont</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Stray start tag “addoninited”.
+                  <div class="info">
+                    <u>at line 136, column 144</u>
+                    <pre class="extract">ntxferbho&gt;&lt;/body&gt;&lt;addoninited id&#x3D;&quot;addonInited&quot; targetelementname&#x3D;&quot;addonInited&quot;&gt;&lt;/addo</pre>
+                  </div>
+                </div>
+                <div class="error">
+                  Element “addoninited” not allowed as child of element “body” in this context. (Suppressing further errors from this subtree.)
+                  <div class="info">
+                    <u>at line 136, column 144</u>
+                    <pre class="extract">ntxferbho&gt;&lt;/body&gt;&lt;addoninited id&#x3D;&quot;addonInited&quot; targetelementname&#x3D;&quot;addonInited&quot;&gt;&lt;/addo</pre>
+                  </div>
+                </div>
+            </div>
+            <div class="warnings">
+                <div class="warning">
+                  The first occurrence of ID “comicLinks” was here.
+                  <div class="info">
+                    <u>at line 99, column 21</u>
+                    <pre class="extract">div&gt;
+&lt;br&gt;
+&lt;div id&#x3D;&quot;comicLinks&quot;&gt;
+Comic</pre>
+                  </div>
+                </div>
+                <div class="warning">
+                  This document appears to be written in English but the “html” start tag has “lang&#x3D;&quot;mul&quot;”. Consider using “lang&#x3D;&quot;en&quot;” (or variant) instead.
+                  <div class="info">
+                    <u>at line 1, column 6</u>
+                    <pre class="extract">&lt;html&gt;&lt;head&gt;</pre>
+                  </div>
+                </div>
+            </div>
+            <div class="notices">
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
