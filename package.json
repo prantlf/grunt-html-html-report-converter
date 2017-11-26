@@ -38,7 +38,7 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-standard": "^3.1.0",
-    "semantic-release": "^8.2.0"
+    "semantic-release": "^8.2.3"
   },
   "peerDependencies": {
     "grunt": ">=0.4.5"
