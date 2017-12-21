@@ -27,18 +27,18 @@
   },
   "scripts": {
     "test": "grunt",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "chalk": "^2.3.0",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-nodeunit": "^1.0.0",
-    "grunt-html-html-reporter": "^0.2.1"
+    "grunt-html-html-reporter": "^0.2.2"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-standard": "^3.1.0",
-    "semantic-release": "^8.2.3"
+    "semantic-release": "^11.0.2"
   },
   "peerDependencies": {
     "grunt": ">=0.4.5"
