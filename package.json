@@ -33,7 +33,7 @@
     "chalk": "^2.3.0",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-nodeunit": "^1.0.0",
-    "grunt-html-html-reporter": "^0.2.2"
+    "grunt-html-html-reporter": "^0.2.3"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
