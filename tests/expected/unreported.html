@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>HTML Validation Report</title>
+    <style>
+      body {font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”, "Helvetica Neue", Arial, sans-serif;}
+      pre {font-family: Monaco, Consolas, "Andale Mono", "Ubuntu Mono", monospace;}
+      #summary {font-size: 38px; color:#555}
+      .error-count {color:red;}
+      .warning-count {color:orange}
+      .notice-count {color:blue}
+      .file-count {color:black;}
+
+      #files {}
+      .file {padding:20px 5px; border-bottom:2px solid #ccc; font-size:22px;}
+      .file .file-info {display:none;}
+      .file a:link {border-bottom:1px dotted #888; text-decoration:none; color:black;}
+      .file a:link:hover {border-bottom:none;}
+
+      .errors {padding:5px 15px; margin:5px 0; border-left:3px solid red; font-size:16px;}
+      .warnings {padding:0 15px; border-left:3px solid orange; font-size:18px; color:#666;}
+      .notices {padding:0 15px; border-left:3px solid blue; font-size:18px; color:#999;}
+
+      .error, .warning, .notice {padding:5px 0; border-bottom:1px solid #DDD;}
+      .error .info, .warning .info, .notice .info {color:#666; font-size:15px;}
+      .error .extract, .warning .extract, .notice .extract {color:#333; font-size:12px;}
+
+      .file:last-child, .error:last-child, .warning:last-child, .notice:last-child {border-bottom:none;}
+    </style>
+    <script type="text/javascript">
+      document.addEventListener('click', function (event) {
+        var target = event.target
+        if (target.tagName === 'A') {
+          var fileInfo = event.target.parentNode.querySelector('.file-info')
+          if (fileInfo.offsetParent === null) {
+            fileInfo.style.display = 'block'
+          } else {
+            fileInfo.style.display = 'none'
+          }
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <div id="summary">
+      Summary: <span class="error-count">0</span> errors,
+               <span class="warning-count">0</span> warnings
+               and <span class="notice-count">1</span> notices
+               in <span class="file-count">1</span> files
+    </div>
+    <div id="files">
+        <div class="file">
+          <a href="javascript:void(null)">tests/actual/deprecated.html</a>
+          <b>
+            (<span class="error-count">0</span> /
+            <span class="warning-count">0</span> /
+            <span class="notice-count">1</span>)
+          </b>
+          <div class="file-info">
+            <div class="errors">
+            </div>
+            <div class="warnings">
+            </div>
+            <div class="notices">
+                <div class="notice">
+                  
+                  <div class="info">
+                    <u>at line , column </u>
+                    <pre class="extract"></pre>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

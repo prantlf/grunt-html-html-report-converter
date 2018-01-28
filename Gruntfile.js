@@ -48,6 +48,14 @@ module.exports = function (grunt) {
         },
         src: 'tests/expected/report.json',
         dest: 'tests/actual/'
+      },
+      includeUnreported: {
+        options: {
+          includeUnreported: true
+        },
+        input: 'tests/actual/deprecated.*',
+        src: 'tests/expected/missing.json',
+        dest: 'tests/actual/unreported.html'
       }
     },
 

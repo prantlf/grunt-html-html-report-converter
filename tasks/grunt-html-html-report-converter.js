@@ -15,10 +15,12 @@ module.exports = function (grunt) {
         const options = this.options({
           targetExtension: '.html',
           ignoreMissing: false,
+          includeUnreported: false,
           force: false
         })
         const targetExtension = options.targetExtension
         const ignoreMissing = options.ignoreMissing
+        const includeUnreported = options.includeUnreported
         const force = options.force
         const warn = force ? grunt.log.warn : grunt.fail.warn
         var files = this.files
@@ -34,6 +36,7 @@ module.exports = function (grunt) {
           files = [
             {
               orig: {
+                input: [],
                 src: input,
                 dest: output
               },
@@ -62,7 +65,25 @@ module.exports = function (grunt) {
         }
 
         function convertFiles (file) {
-          const src = file.src
+          let src = file.src
+          if (!src.length && includeUnreported) {
+            const input = file.input
+            if (input) {
+              const report = grunt.file.expand(input)
+                                  .map(function (file) {
+                                    return {
+                                      file: file
+                                    }
+                                  })
+              if (report.length) {
+                const output = file.orig.src[0]
+                fs.writeFileSync(output, JSON.stringify(report), 'utf-8')
+                src = [output]
+              }
+            } else {
+              warn('No input files specificed for ' + chalk.cyan(file.orig.src) + '.')
+            }
+          }
           if (src.length) {
             src.forEach(convertFile.bind(null, file))
           } else {

@@ -24,5 +24,9 @@ exports['htmllint-html-report-converter'] = {
 
   extension: function (test) {
     compare(test, 'report.html', 'report.htm')
+  },
+
+  unreported: function (test) {
+    compare(test, 'unreported.html', 'unreported.html')
   }
 }
