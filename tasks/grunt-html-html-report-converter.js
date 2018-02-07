@@ -77,6 +77,8 @@ module.exports = function (grunt) {
                                   })
               if (report.length) {
                 const output = file.orig.src[0]
+                const dir = path.dirname(output)
+                grunt.file.mkdir(dir)
                 fs.writeFileSync(output, JSON.stringify(report), 'utf-8')
                 src = [output]
               }

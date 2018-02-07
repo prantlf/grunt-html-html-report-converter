@@ -26,6 +26,14 @@ exports['htmllint-html-report-converter'] = {
     compare(test, 'report.html', 'report.htm')
   },
 
+  'unreported-json': function (test) {
+    test.expect(2)
+    const json = fs.statSync(path.join(__dirname, 'extra', 'missing.json'))
+    test.ok(json)
+    test.ok(json.size > 0)
+    test.done()
+  },
+
   unreported: function (test) {
     compare(test, 'unreported.html', 'unreported.html')
   }

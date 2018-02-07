@@ -54,7 +54,7 @@ module.exports = function (grunt) {
           includeUnreported: true
         },
         input: 'tests/actual/deprecated.*',
-        src: 'tests/expected/missing.json',
+        src: 'tests/extra/missing.json',
         dest: 'tests/actual/unreported.html'
       }
     },
@@ -64,7 +64,7 @@ module.exports = function (grunt) {
     },
 
     clean: {
-      tests: ['tests/actual/*']
+      tests: ['tests/actual/*', 'tests/extra']
     }
   })
 
