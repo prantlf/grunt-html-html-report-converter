@@ -191,6 +191,7 @@ your code using Grunt.
 
 ## Release History
 
+ * 2018-03-01   v1.0.0   Upgrade to the reporter v1.0.0
  * 2018-01-27   v0.1.0   Allow generating an empty report with all validated files
  * 2017-11-25   v0.0.3   Fix appending the HTML extension to the target report file
  * 2017-11-25   v0.0.2   Upgrade the reporter dependency to support Node.js < 7
