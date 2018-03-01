@@ -31,13 +31,13 @@
     "travis-deploy-once": "travis-deploy-once"
   },
   "dependencies": {
-    "chalk": "^2.3.1"
+    "chalk": "^2.3.1",
+    "grunt-html-html-reporter": "^2.0.0"
   },
   "devDependencies": {
     "grunt": "^1.0.2",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-nodeunit": "^1.0.0",
-    "grunt-html-html-reporter": "^2.0.0",
     "grunt-standard": "^3.1.0",
     "semantic-release": "^12.4.1",
     "travis-deploy-once": "^4.3.4"
