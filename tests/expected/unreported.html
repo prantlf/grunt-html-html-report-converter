@@ -1,70 +1,338 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>HTML Validation Report</title>
     <style>
-      body {font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”, "Helvetica Neue", Arial, sans-serif;}
-      pre {font-family: Monaco, Consolas, "Andale Mono", "Ubuntu Mono", monospace;}
-      #summary {font-size: 38px; color:#555}
-      .error-count {color:red;}
-      .warning-count {color:orange}
-      .notice-count {color:blue}
-      .file-count {color:black;}
-
-      #files {}
-      .file {padding:20px 5px; border-bottom:2px solid #ccc; font-size:22px;}
-      .file .file-info {display:none;}
-      .file a:link {border-bottom:1px dotted #888; text-decoration:none; color:black;}
-      .file a:link:hover {border-bottom:none;}
-
-      .errors {padding:5px 15px; margin:5px 0; border-left:3px solid red; font-size:16px;}
-      .warnings {padding:0 15px; border-left:3px solid orange; font-size:18px; color:#666;}
-      .notices {padding:0 15px; border-left:3px solid blue; font-size:18px; color:#999;}
-
-      .error, .warning, .notice {padding:5px 0; border-bottom:1px solid #DDD;}
-      .error .info, .warning .info, .notice .info {color:#666; font-size:15px;}
-      .error .extract, .warning .extract, .notice .extract {color:#333; font-size:12px;}
-
-      .file:last-child, .error:last-child, .warning:last-child, .notice:last-child {border-bottom:none;}
+      @import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic');
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+      html {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+      body {
+        background: #FFF;
+        margin-top: 17px;
+        color: #2C3E50;
+        font-family: 'Lato', 'Helvetica Neue', sans-serif;
+        font-size: 15px;
+        line-height: 1.42857143;
+        overflow-y: scroll
+      }
+      h1 {
+        display: inline-block;
+        margin: 21px 0 20px 0;
+        font-size: 39px;
+        font-weight: 400;
+        word-break: break-all;
+      }
+      h2 {
+        display: inline-block;
+        margin: 28px 0 13px 0;
+        font-size: 25px;
+        font-weight: 400;
+        word-break: break-all;
+      }
+      h4 {
+        margin: 0px;
+        color: #636F79;
+        font-size: 14.25px;
+      }
+      pre {
+        display: block;
+        background-color: #ECF0F1;
+        border: 1px solid #CCC;
+        border-radius: 4px;
+        margin: 0px 0px 10.5px;
+        padding: 10px;
+        color: #7B8A8B;
+        font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+        font-size: 14px;
+        line-height: 1.42857143;
+        overflow: auto;
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+      code {
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+      .container {
+        max-width: 900px;
+        width: 100%;
+        margin: 0px auto;
+        padding: 0px 15px;
+      }
+      .row {
+        margin-right: -15px;
+        margin-left: -15px;
+        clear: both;
+      }
+      .panel {
+        background-color: #FFF;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        margin-bottom: 21px;
+        box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
+      }
+      .panel-heading {
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        color: #FFF;
+      }
+      .panel-body {
+        padding: 15px;
+      }
+      .panel-footer {
+        background-color: #ECF0F1;
+        border-top: 1px solid #ECF0F1;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        padding: 10px 15px;
+      }
+      .panel-success { border-color: #18BC9C; }
+      .panel-danger  { border-color: #E74C3C; }
+      .panel-warning { border-color: #F39C12; }
+      .panel-primary { border-color: #2C3E50; }
+      .panel-success>.panel-heading { background-color: #18BC9C; border-color: #18BC9C; }
+      .panel-danger>.panel-heading  { background-color: #E74C3C; border-color: #E74C3C; }
+      .panel-warning>.panel-heading { background-color: #F39C12; border-color: #F39C12; }
+      .panel-primary>.panel-heading { background-color: #2C3E50; border-color: #2C3E50; }
+      .hide {
+        display: none;
+      }
+      .row > a > h2::before {
+        content: '\25b2';
+      }
+      .row.close > a > h2::before {
+        content: '\25bc';
+      }
+      .buttons {
+        display: inline-block;
+        margin-top: 30px;
+        float: right;
+      }
+      .buttons .disabled {
+        box-shadow: none;
+        cursor: pointer;
+        filter: alpha(opacity=65);
+        opacity: 0.65;
+        pointer-events: auto;
+      }
+      .panel-primary i {
+        margin: 0px 7px;
+      }
+      .btn {
+        display: inline-block;
+        background-image: none;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        margin-bottom: 0px;
+        padding: 10px 15px;
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        cursor: pointer;
+        touch-action: manipulation;
+        user-select: none;
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+      .btn-sm {
+        border-radius: 3px;
+        padding: 6px 9px;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+      .btn-danger {
+        background-color: #E74C3C;
+        border-color: #E74C3C;
+        color: #FFF;
+      }
+      .btn-warning {
+        background-color: #F39C12;
+        border-color: #F39C12;
+        color: #FFF;
+      }
+      .btn-primary {
+        background-color: #2C3E50;
+        border-color: #2C3E50;
+        color: #FFF;
+      }
+      .btn-danger,
+      .btn-warning {
+        margin-right: 3px;
+      }
+      .badge {
+        position: relative;
+        top: -1px;
+        display: inline-block;
+        min-width: 10px;
+        background-color: #FFF;
+        border-radius: 10px;
+        padding: 3px 7px;
+        color: #FFF;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+      .btn-danger .badge {
+        color: #E74C3C;
+      }
+      .btn-warning .badge {
+        color: #F39C12;
+      }
+      .btn-primary .badge {
+        color: #2C3E50;
+      }
+      .glyphicon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        vertical-align: top;
+      }
+      .glyphicon-ok {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMSAtNiAzMiAzMiI+PHBhdGggZmlsbD0iIzE4QkM5QyIgZD0iTS43NzMgMTMuNDkzbDExLjE3MyAxMS4yTDMzLjc1OSAyLjgyNmwtNS42NTMtNS42NTNMMTEuOTE5IDEzLjM2IDYuNDI2IDcuODR6Ii8+PC9zdmc+');
+      }
+      .glyphicon-remove {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAtNiAzMiAzMiI+PHBhdGggZmlsbD0iI0U3NEMzQyIgZD0iTTIuODI3IDE3LjEybDcuNTItNy41Mi03LjUyLTcuNTJMOC40OC0zLjU3MyAxNiAzLjk0N2w3LjUyLTcuNTIgNS42NTMgNS42NTMtNy41MiA3LjUyIDcuNTIgNy41Mi01LjY1MyA1LjY1My03LjUyLTcuNTItNy41MiA3LjUyeiIvPjwvc3ZnPg==');
+      }
+      .glyphicon-ban-circle {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAtNiAzMiAzMiI+PHBhdGggZmlsbD0iI0YzOUMxMiIgZD0iTS4xMDcgOS42cTAtNC4zMiAyLjEzMy03Ljk3M1Q4LjAyNy00LjE2IDE2LTYuMjkzdDcuOTczIDIuMTMzIDUuNzg3IDUuNzg3VDMxLjg5MyA5LjZ0LTIuMTMzIDcuOTczLTUuNzg3IDUuNzg3VDE2IDI1LjQ5MyA4LjAyNyAyMy4zNiAyLjI0IDE3LjU3My4xMDcgOS42em00Ljg1MyAwcTAgMy4wNjcgMS42NTMgNS43MzNMMjEuNzYuMjEzUTE5LjA5My0xLjQ0IDE2LTEuNDRxLTQuNTYgMC03LjggMy4yNFQ0Ljk2IDkuNnptNS40NjcgOS40NjdRMTMuMDE0IDIwLjY0IDE2IDIwLjY0cTQuNTYgMCA3LjgtMy4yNHQzLjI0LTcuOHEwLTIuOTg3LTEuNTczLTUuNTczeiIvPjwvc3ZnPg==');
+      }
     </style>
-    <script type="text/javascript">
+  </head>
+  <body>
+    <div class="container" role="main">
+          <div class="row summary">
+      <h1>HTML Validity Report</h1>      <span class="buttons"><button class="btn btn-sm btn-danger">Errors <span class="badge">0</span></button><button class="btn btn-sm btn-warning">Warnings <span class="badge">0</span></button><button class="btn btn-sm btn-primary">Notices <span class="badge">0</span></button></span>
+    </div>
+
+          <div class="row">
+      <a href="javascript:void(0)"><h2>tests/actual/deprecated.html</h2></a>      <span class="buttons"><button class="btn btn-sm btn-danger">Errors <span class="badge">0</span></button><button class="btn btn-sm btn-warning">Warnings <span class="badge">0</span></button><button class="btn btn-sm btn-primary">Notices <span class="badge">0</span></button></span>
+    </div>
+    <div class="row"></div>
+
+    </div>
+    <script>
+      (function() {
+        var rows = document.querySelectorAll('.container > .row')
+        var rowCount = rows.length
+        var i = 1
+        while (i < rowCount) {
+          rows[i++].classList.toggle('close')
+          rows[i++].classList.toggle('hide')
+        }
+      }())
+
       document.addEventListener('click', function (event) {
         var target = event.target
-        if (target.tagName === 'A') {
-          var fileInfo = event.target.parentNode.querySelector('.file-info')
-          if (fileInfo.offsetParent === null) {
-            fileInfo.style.display = 'block'
+        var titleRow, contentRow
+        if (target.matches('.row > a > h2') || target.matches('.row > a')) {
+          titleRow = closestAncestor(target, '.row')
+          contentRow = nextSibling(titleRow, '.row')
+          titleRow.classList.toggle('close')
+          contentRow.classList.toggle('hide')
+        } else if (target.tagName === 'BUTTON') {
+          titleRow = closestAncestor(target, '.row')
+          if (titleRow.classList.contains('summary')) {
+            toggleAllLevels(target)
           } else {
-            fileInfo.style.display = 'none'
+            toggleLevel(target)
           }
         }
       })
+
+      function toggleAllLevels (target) {
+        var classList = target.classList
+        var buttonClass
+        if (classList.contains('btn-danger')) {
+          buttonClass= 'btn-danger'
+        } else if (classList.contains('btn-warning')) {
+          buttonClass = 'btn-warning'
+        } else if (classList.contains('btn-primary')) {
+          buttonClass = 'btn-primary'
+        }
+        if (buttonClass) {
+          classList.toggle('disabled')
+          var buttons = document.querySelectorAll('.buttons > button.' + buttonClass)
+          var disabled = classList.contains('disabled')
+          var buttonCount = buttons.length
+          var i = 0
+          while (i < buttonCount) {
+            toggleLevel(buttons[i++], disabled)
+          }
+        }
+      }
+
+      function toggleLevel (target, toggle) {
+        var titleRow, contentRow, panelSelector, panels, method
+        if (target.classList.contains('btn-danger')) {
+          panelSelector = '.panel-danger'
+        } else if (target.classList.contains('btn-warning')) {
+          panelSelector = '.panel-warning'
+        } else if (target.classList.contains('btn-primary')) {
+          panelSelector = '.panel-primary'
+        }
+        if (panelSelector) {
+          titleRow = closestAncestor(target, '.row')
+          contentRow = nextSibling(titleRow, '.row')
+          panels = contentRow.querySelectorAll(panelSelector)
+          method = toggle ? 'add' : toggle === false ? 'remove' : 'toggle'
+          target.classList[method]('disabled')
+          toggleVisibility(panels, toggle)
+        }
+      }
+
+      function toggleVisibility (elements, toggle) {
+        var method = method = toggle ? 'add' : toggle === false ? 'remove' : 'toggle'
+        var elementCount = elements.length
+        var i = 0
+        while (i < elementCount) {
+          elements[i++].classList[method]('hide')
+        }
+      }
+
+      function closestAncestor(element, selector) {
+        for (;;) {
+          element = element.parentElement
+          if (!element) {
+            break
+          }
+          if (element.matches(selector)) {
+            return element
+          }
+        }
+      }
+
+      function nextSibling(element, selector) {
+        var siblings = element.parentElement.children
+        var childCount = siblings.length
+        var i = 0
+        while (i < childCount) {
+          if (siblings[i++] === element) {
+            break
+          }
+        }
+        while (i < childCount) {
+          element = siblings[i++]
+          if (element.matches(selector)) {
+            return element
+          }
+        }
+      }
     </script>
-  </head>
-  <body>
-    <div id="summary">
-      Summary: <span class="error-count">0</span> errors,
-               <span class="warning-count">0</span> warnings
-               and <span class="notice-count">0</span> notices
-               in <span class="file-count">1</span> files
-    </div>
-    <div id="files">
-        <div class="file">
-          <a href="javascript:void(null)">tests/actual/deprecated.html</a>
-          <b>
-            (<span class="error-count">0</span> /
-            <span class="warning-count">0</span> /
-            <span class="notice-count">0</span>)
-          </b>
-          <div class="file-info">
-            <div class="errors">
-            </div>
-            <div class="warnings">
-            </div>
-            <div class="notices">
-            </div>
-          </div>
-        </div>
-    </div>
   </body>
 </html>
