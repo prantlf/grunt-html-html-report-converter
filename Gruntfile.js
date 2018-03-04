@@ -49,6 +49,13 @@ module.exports = function (grunt) {
         src: 'tests/expected/report.json',
         dest: 'tests/actual/'
       },
+      showFileNameOnly: {
+        options: {
+          showFileNameOnly: true
+        },
+        src: 'tests/expected/report.json',
+        dest: 'tests/extra/'
+      },
       includeUnreported: {
         options: {
           includeUnreported: true

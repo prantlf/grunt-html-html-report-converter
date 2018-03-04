@@ -40,6 +40,7 @@ Default options support the most usual usage scenario:
   options: {
     targetExtension: '.html',
     ignoreMissing: false,
+    showFileNameOnly: false,
     force: false
   },
   all: {
@@ -79,6 +80,12 @@ Type: `String`
 Default: ".html:
 
 If the `dest` property specified only the target directory, the converted report file will be stored there with the file extension replaced to ".html" or to the extesion specified by this property.
+
+#### showFileNameOnly
+Type: `Boolean`
+Default value: `false`
+
+Cuts the directory from tested HTML files, when creating page titles from in the report. If you use unique names for files alone, you will not get too long page titles, if you flip this flag tp `true`.
 
 ### Task Data
 
@@ -191,6 +198,8 @@ your code using Grunt.
 
 ## Release History
 
+ * 2018-03-05   v2.2.0   Upgrade to the reporter v2.2.0, allow generating
+                         page titles from file names without directory
  * 2018-03-04   v2.1.0   Upgrade to the reporter v2.1.0
  * 2018-03-01   v2.0.0   Upgrade to the reporter v2.0.0
  * 2018-03-01   v1.0.0   Upgrade to the reporter v1.0.0

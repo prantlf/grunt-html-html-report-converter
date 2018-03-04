@@ -16,11 +16,13 @@ module.exports = function (grunt) {
           targetExtension: '.html',
           ignoreMissing: false,
           includeUnreported: false,
+          showFileNameOnly: false,
           force: false
         })
         const targetExtension = options.targetExtension
         const ignoreMissing = options.ignoreMissing
         const includeUnreported = options.includeUnreported
+        const showFileNameOnly = options.showFileNameOnly
         const force = options.force
         const warn = force ? grunt.log.warn : grunt.fail.warn
         var files = this.files
@@ -113,7 +115,10 @@ module.exports = function (grunt) {
               chalk.cyan(dest) + '.')
           try {
             const results = JSON.parse(fs.readFileSync(src, 'utf-8'))
-            fs.writeFileSync(dest, report(results), 'utf-8')
+            const generated = report(results, {
+              showFileNameOnly: showFileNameOnly
+            })
+            fs.writeFileSync(dest, generated, 'utf-8')
             ++converted
           } catch (error) {
             grunt.verbose.error(error.stack)
