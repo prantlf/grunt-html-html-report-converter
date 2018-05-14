@@ -41,6 +41,7 @@ Default options support the most usual usage scenario:
     targetExtension: '.html',
     ignoreMissing: false,
     showFileNameOnly: false,
+    showCommonPathOnly: true,
     force: false
   },
   all: {
@@ -198,6 +199,7 @@ your code using Grunt.
 
 ## Release History
 
+ * 2018-05-14   v3.1.0   Allow cutting the same initial part of the path from tested HTML files for displaying purposes
  * 2018-04-27   v3.0.0   Dropped support of Node.js 4
  * 2018-03-05   v2.2.0   Upgrade to the reporter v2.2.0, allow generating
                          page titles from file names without directory

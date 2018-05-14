@@ -3,3 +3,4 @@ node_modules
 npm-debug.log
 tests/actual
 tests/extra
+tests/extra2
