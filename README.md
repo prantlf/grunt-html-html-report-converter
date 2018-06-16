@@ -1,6 +1,11 @@
 # grunt-html-html-report-converter
 
-[![NPM version](https://badge.fury.io/js/grunt-html-html-report-converter.png)](http://badge.fury.io/js/grunt-html-html-report-converter) [![Build Status](https://travis-ci.org/prantlf/grunt-html-html-report-converter.svg?branch=master)](https://travis-ci.org/prantlf/grunt-html-html-report-converter) [![Dependency Status](https://david-dm.org/prantlf/grunt-html-html-report-converter.svg)](https://david-dm.org/prantlf/grunt-html-html-report-converter) [![devDependency Status](https://david-dm.org/prantlf/grunt-html-html-report-converter/dev-status.svg)](https://david-dm.org/prantlf/grunt-html-html-report-converter#info=devDependencies) [![Greenkeeper badge](https://badges.greenkeeper.io/prantlf/grunt-html-html-report-converter.svg)](https://greenkeeper.io/) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![NPM version](https://badge.fury.io/js/grunt-html-html-report-converter.png)](http://badge.fury.io/js/grunt-html-html-report-converter)
+[![Build Status](https://travis-ci.org/prantlf/grunt-html-html-report-converter.svg?branch=master)](https://travis-ci.org/prantlf/grunt-html-html-report-converter)
+[![Dependency Status](https://david-dm.org/prantlf/grunt-html-html-report-converter.svg)](https://david-dm.org/prantlf/grunt-html-html-report-converter)
+[![devDependency Status](https://david-dm.org/prantlf/grunt-html-html-report-converter/dev-status.svg)](https://david-dm.org/prantlf/grunt-html-html-report-converter#info=devDependencies)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 [![NPM Downloads](https://nodei.co/npm/grunt-html-html-report-converter.png?downloads=true&stars=true)](https://www.npmjs.com/package/grunt-html-html-report-converter)
 
