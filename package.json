@@ -39,8 +39,8 @@
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-nodeunit": "^2.0.0",
     "grunt-standard": "^3.1.0",
-    "semantic-release": "^15.5.4",
-    "travis-deploy-once": "^5.0.0"
+    "semantic-release": "^15.9.14",
+    "travis-deploy-once": "^5.0.7"
   },
   "peerDependencies": {
     "grunt": ">=0.4.5"
