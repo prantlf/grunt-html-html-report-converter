@@ -30,16 +30,16 @@
   },
   "dependencies": {
     "chalk": "^2.4.2",
-    "grunt-html-html-reporter": "^3.1.1"
+    "grunt-html-html-reporter": "^3.1.2"
   },
   "devDependencies": {
-    "grunt": "^1.0.3",
+    "grunt": "1.0.4",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-nodeunit": "^2.0.0",
     "grunt-standard": "^3.1.0"
   },
   "peerDependencies": {
-    "grunt": ">=1.0.3"
+    "grunt": ">=1.0.4"
   },
   "keywords": [
     "gruntplugin",
