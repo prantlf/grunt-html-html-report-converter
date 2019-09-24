@@ -1,14 +1,14 @@
 'use strict'
 
-const {readFileSync, statSync} = require('fs')
-const {join} = require('path')
+const { readFileSync, statSync } = require('fs')
+const { join } = require('path')
 
 function compare (test, source, target, directory) {
   test.expect(1)
   const expected = readFileSync(join(__dirname, 'expected',
-            source), 'utf-8')
+    source), 'utf-8')
   const actual = readFileSync(join(__dirname,
-            directory || 'actual', target), 'utf-8')
+    directory || 'actual', target), 'utf-8')
   test.equal(expected, actual)
   test.done()
 }
