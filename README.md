@@ -218,7 +218,7 @@ your code using Grunt.
 
 ## License
 
-Copyright (c) 2017-2019 Ferdinand Prantl
+Copyright (c) 2017-2022 Ferdinand Prantl
 
 Licensed under the MIT license.
 
