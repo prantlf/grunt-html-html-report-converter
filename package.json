@@ -1,7 +1,7 @@
 {
   "name": "grunt-html-html-report-converter",
   "description": "Converts the JSON report of the grunt-html task to HTML.",
-  "version": "3.1.3",
+  "version": "3.1.4",
   "homepage": "https://github.com/prantlf/grunt-html-html-report-converter",
   "author": {
     "name": "Ferdinand Prantl",

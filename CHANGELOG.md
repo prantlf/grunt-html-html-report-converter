@@ -1,3 +1,10 @@
+## [3.1.4](https://github.com/prantlf/grunt-html-html-report-converter/compare/v3.1.3...v3.1.4) (2022-05-27)
+
+
+### Bug Fixes
+
+* Replace chalk with colorette ([e69a1e3](https://github.com/prantlf/grunt-html-html-report-converter/commit/e69a1e31aeffe0f41e7b23753841e3498001a688))
+
 ## 3.1.0 (2018-05-14)
 
 Allow cutting the same initial part of the path from tested HTML files for displaying purposes
