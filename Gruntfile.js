@@ -70,6 +70,13 @@ module.exports = function (grunt) {
         input: 'tests/actual/deprecated.*',
         src: 'tests/extra/missing.json',
         dest: 'tests/actual/unreported.html'
+      },
+      noInput: {
+        options: {
+          force: true
+        },
+        src: 'tests/none/*.json',
+        dest: 'tests/extra/'
       }
     },
 

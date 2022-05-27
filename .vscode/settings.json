@@ -1,9 +1,8 @@
 // Place your settings in this file to overwrite default and user settings.
 {
   "files.exclude": {
-    ".nyc_output": true,
+    ".DS_Store": true,
     "coverage": true,
-    "node_modules": true,
-    "npm-debug.log": true
+    "node_modules": true
   }
 }
