@@ -1,6 +1,4 @@
-'use strict'
-
-const chalk = require('chalk')
+const colorette = require('colorette')
 const fs = require('fs')
 const report = require('grunt-html-html-reporter')
 const path = require('path')
@@ -53,15 +51,18 @@ module.exports = function (grunt) {
       if (files.length) {
         try {
           files.forEach(convertFiles)
+          /* c8 ignore next 2 */
           const ok = failed ? force ? grunt.log.warn : grunt.fail.warn
             : grunt.log.ok
           ok(converted + ' ' + grunt.util.pluralize(converted,
             'file/files') + ' converted, ' + failed + ' failed.')
+        /* c8 ignore next 5 */
         } catch (error) {
           grunt.verbose.error(error.stack)
           grunt.log.error(error)
           warn('Converting validation reports failed.')
         }
+      /* c8 ignore next 5 */
       } else {
         if (!ignoreMissing) {
           warn('No files specified.')
@@ -86,15 +87,17 @@ module.exports = function (grunt) {
               fs.writeFileSync(output, JSON.stringify(report), 'utf-8')
               src = [output]
             }
+          /* c8 ignore next 3 */
           } else {
-            warn('No input files specificed for ' + chalk.cyan(file.orig.src) + '.')
+            warn('No input files specificed for ' + colorette.cyan(file.orig.src) + '.')
           }
         }
         if (src.length) {
           src.forEach(convertFile.bind(null, file))
+        /* c8 ignore next 5 */
         } else {
           if (!ignoreMissing) {
-            warn('No files found at ' + chalk.cyan(file.orig.src) + '.')
+            warn('No files found at ' + colorette.cyan(file.orig.src) + '.')
           }
         }
       }
@@ -113,8 +116,8 @@ module.exports = function (grunt) {
         }
         grunt.file.mkdir(dir)
 
-        grunt.verbose.writeln('Converting ' + chalk.cyan(src) + ' to ' +
-              chalk.cyan(dest) + '.')
+        grunt.verbose.writeln('Converting ' + colorette.cyan(src) + ' to ' +
+              colorette.cyan(dest) + '.')
         try {
           const results = JSON.parse(fs.readFileSync(src, 'utf-8'))
           const generated = report(results, {
@@ -123,6 +126,7 @@ module.exports = function (grunt) {
           })
           fs.writeFileSync(dest, generated, 'utf-8')
           ++converted
+        /* c8 ignore next 6 */
         } catch (error) {
           grunt.verbose.error(error.stack)
           grunt.log.error(error)
